@@ -210,10 +210,10 @@ class Application : TkdApplication {
     if (!codeIsExecute) {
       try {
         startAddress = addressEntry.getValue.to!uint(16);
-        if (startAddress < 0x80000000 || startAddress > 0x81FFFFFF) throw new Exception("ayy lmao");
+        if (startAddress < 0x80000000 || startAddress > 0x91FFFFFF) throw new Exception("ayy lmao");
       }
       catch (Exception e) {
-        errorNotice("Your address should be a hex number between 80000000 and 81FFFFFF (or use N/A for the C0 codetype).");
+        errorNotice("Your address should be a hex number between 80000000 and 81FFFFFF (or use N/A for the C0 codetype). If you're using a pointer address, use a hex number between 90000000 and 91FFFFFF.");
         return;
       }
     }
